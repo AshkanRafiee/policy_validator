@@ -77,8 +77,6 @@ It's recommended to **avoid hardcoding your API key** in your code as shown in t
 
 - **Secret management systems**: Use secure secret management tools such as AWS Secrets Manager, Azure Key Vault, or HashiCorp Vault to securely store and access the API key in a managed way.
 
-These methods help avoid accidental leakage of sensitive information in version control or logs.
-
 ### Logging
 
 The package includes a built-in logging mechanism to help with debugging and tracking the behavior of the validation process. By default, logging is set to `INFO` level, and logs are printed to the console.
