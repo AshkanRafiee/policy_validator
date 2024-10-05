@@ -81,12 +81,6 @@ It's recommended to **avoid hardcoding your API key** in your code as shown in t
 
 The package includes a built-in logging mechanism to help with debugging and tracking the behavior of the validation process. By default, logging is set to `INFO` level, and logs are printed to the console.
 
-## Requirements
-
-- Python 3.7 or higher
-- `openai` 1.47.0
-- `tenacity` 9.0.0
-
 ## License
 
 This project is licensed under the MIT License.
