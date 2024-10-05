@@ -34,7 +34,7 @@ policies = [
 ]
 
 api_key = "your_openai_api_key"
-validator = PolicyValidator(api_key=api_key, model="gpt-4", max_tokens=100, temperature=0.7, policies=policies)
+validator = PolicyValidator(api_key=api_key, model="gpt-4o-mini", max_tokens=100, temperature=0.3, policies=policies)
 
 # Validate user input
 result = validator.validate("Who is John Doe?")
@@ -57,7 +57,7 @@ You can then load the policies from this file:
 from policy_validator import PolicyValidator
 
 api_key = "your_openai_api_key"
-validator = PolicyValidator(api_key=api_key, model="gpt-4", max_tokens=100, temperature=0.7, policy_file="policies.txt")
+validator = PolicyValidator(api_key=api_key, model="gpt-4o-mini", max_tokens=100, temperature=0.3, policy_file="policies.txt")
 
 # Validate user input
 result = validator.validate("Some inappropriate message")
