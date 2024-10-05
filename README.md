@@ -7,7 +7,7 @@ Policy Validator is a Python package that leverages OpenAI GPT models to validat
 - Uses OpenAI GPT to validate text against content moderation policies.
 - Supports retry mechanisms to ensure reliability when calling the GPT API.
 - Provides logging for tracking and debugging.
-- Policies can be provided either as a list or via a file, depending on developer preference.
+- Policies can be provided either as a tuple or via a file, depending on developer preference.
 
 ## Installation
 
@@ -19,19 +19,19 @@ pip install policy_validator
 
 ## Usage
 
-You can provide policies either directly as a list or load them from a file. The `PolicyValidator` class supports both approaches.
+You can provide policies either directly as a tuple or load them from a file. The `PolicyValidator` class supports both approaches.
 
-### Example: Passing policies as a list
+### Example: Passing policies as a tuple
 
 ```python
 from policy_validator import PolicyValidator
 
-# Define policies directly as a list
-policies = [
+# Define policies directly as a tuple
+policies = (
     "No abusive language.",
     "No personal information sharing.",
     "No inappropriate content."
-]
+)
 
 api_key = "your_openai_api_key"
 validator = PolicyValidator(api_key=api_key, model="gpt-4o-mini", max_tokens=100, temperature=0.3, policies=policies)
