@@ -15,7 +15,7 @@ setup(
     packages=['policy_validator'],
     package_dir={'': 'src'},
     install_requires=[
-        'openai>=1.51.2',
+        'openai>=1.47.0',
         'tenacity>=9.0.0'
     ],
     classifiers=[
