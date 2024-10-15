@@ -1,17 +1,18 @@
 
 # Policy Validator
 
-Policy Validator is a Python package that leverages OpenAI GPT models to validate text against predefined content policies.
+Policy Validator is a Python package that leverages OpenAI's models to validate text against predefined content policies. It ensures that user input or even the response conforms to specific rules, making it useful for content moderation, compliance checks, and safety regulations.
 
-## Features
-- Uses OpenAI GPT to validate text against content moderation policies.
-- Supports retry mechanisms to ensure reliability when calling the GPT API.
-- Provides logging for tracking and debugging.
-- Policies can be provided either as a tuple or via a file, depending on developer preference.
+## Key Features
+- **OpenAI GPT Integration**: Uses OpenAI models to validate text based on content moderation policies.
+- **Retry Mechanism**: Ensures reliable API calls with built-in retry functionality.
+- **Logging**: Offers comprehensive logging to track and debug policy validation processes.
+- **Flexible Policy Input**: Policies can be supplied either as tuples directly or loaded from a file.
+- **Customizable**: Adjust model parameters such as max tokens, temperature, and the specific OpenAI model used.
 
 ## Installation
 
-You can install the package using `pip`:
+To install the Policy Validator package, use `pip`:
 
 ```bash
 pip install policy_validator
@@ -19,9 +20,11 @@ pip install policy_validator
 
 ## Usage
 
-You can provide policies either directly as a tuple or load them from a file. The `PolicyValidator` class supports both approaches.
+The `PolicyValidator` class allows you to pass policies either as a tuple or via a file.
 
-### Example: Passing policies as a tuple
+### Example 1: Passing Policies as a Tuple
+
+In this example, policies are defined directly as a tuple in Python:
 
 ```python
 from policy_validator import PolicyValidator
@@ -41,9 +44,9 @@ result = validator.validate("Who is John Doe?")
 print(result)
 ```
 
-### Example: Passing policies via a file
+### Example 2: Passing Policies via a File
 
-Create a `policies.txt` file in the directory where you're using `policy_validator`.
+You can also load policies from a file. First, create a `policies.txt` file with the following content:
 
 ```plaintext
 Policy 1: No abusive language.
@@ -51,36 +54,29 @@ Policy 2: No personal information sharing.
 Policy 3: No inappropriate content.
 ```
 
-You can then load the policies from this file:
+Now load the policies from this file:
 
 ```python
 from policy_validator import PolicyValidator
 
 api_key = "your_openai_api_key"
-validator = PolicyValidator(api_key=api_key, model="gpt-4o-mini", max_tokens=100, temperature=0.3, policy_file="policies.txt")
+validator = PolicyValidator(api_key=api_key, model="gpt-4o-mini", max_tokens=100, temperature=0.3, policies_file="policies.txt")
 
 # Validate user input
-result = validator.validate("Some inappropriate message")
+result = validator.validate("Who is Ashkan Rafiee?")
 print(result)
 ```
 
-### Important: Securely Managing API Keys
+## Contributing
 
-It's recommended to **avoid hardcoding your API key** in your code as shown in the above examples. Instead, use a more secure method, such as:
+We welcome contributions! Please follow the steps below to contribute:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Submit a pull request.
 
-- **Environment variables**: Store the API key in an environment variable and access it via `os.getenv()`.
-  
-  ```python
-  import os
-  api_key = os.getenv("OPENAI_API_KEY")
-  ```
-
-- **Secret management systems**: Use secure secret management tools such as AWS Secrets Manager, Azure Key Vault, or HashiCorp Vault to securely store and access the API key in a managed way.
-
-### Logging
-
-The package includes a built-in logging mechanism to help with debugging and tracking the behavior of the validation process. By default, logging is set to `INFO` level, and logs are printed to the console.
+For any issues, feel free to submit a bug report or open a discussion.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
