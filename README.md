@@ -67,16 +67,6 @@ result = validator.validate("Who is Ashkan Rafiee?")
 print(result)
 ```
 
-## Contributing
-
-We welcome contributions! Please follow the steps below to contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Submit a pull request.
-
-For any issues, feel free to submit a bug report or open a discussion.
-
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
